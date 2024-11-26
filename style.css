@@ -1,0 +1,131 @@
+body{
+    background-image: url(restaurantbackground.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.nav{
+    display: flex;
+    background-color: grey;
+    padding-bottom: 18px;
+    padding-top: 18px;
+    margin-top: -10px;
+    margin-left: -10px;
+    background-attachment: scroll;
+    a{
+        text-decoration: none;
+        color: black;
+        font-weight: bolder;
+        border-radius: 2px;
+        margin-left: 20px;
+        margin-top: 9px;
+    }
+    a:hover{
+        text-decoration: none;
+        color: black;
+        background: linear-gradient( to left, green,red);
+        border-radius: 5px;
+        padding: 2px;
+    }
+    img{
+        height: 43px;
+        width: 43px;
+    }
+    input{
+        margin-left: 30px;
+        margin-top: -5px;
+        width: 400pc;
+        border: none;
+        outline: none;
+    }
+}
+#topic{
+    margin-left: 460px;
+    font-weight: 1000;
+    font-size: 40px;
+    color: white;
+    border-radius: 20px;
+    padding-left: px;
+    padding-right: 8px;
+    background-position: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 400px;
+}
+.appetizer{
+    
+    background-color: white;
+    border-radius: 30px;
+    h2{
+        font-weight: bold;
+        margin-left: 150px;
+        text-decoration: underline wavy;
+        color: green;
+    }
+    strong{
+        font-size: large;
+        font-weight: 500;
+        color: red;
+    }
+}
+.main{
+    
+    background-color: black;
+    border-radius: 30px;
+    color: white;
+    h2{
+        font-weight: bold;
+        margin-left: 160px;
+        text-decoration: underline wavy;
+        color: green;
+    }
+    strong{
+        font-size: large;
+        font-weight: 500;
+        color: red;
+    }
+}
+.dessert{
+    background-color: white;
+    border-radius: 30px;
+    h2{
+        font-weight: bold;
+        margin-left: 170px;
+        text-decoration: underline wavy;
+        color: yellowgreen;
+    }
+    strong{
+        font-size: large;
+        font-weight: 500;
+        color: red;
+    }
+}
+.second{
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    border-radius: 30px;
+}
+.contact{
+    margin-left: 550px;
+    margin-top: 100px;
+    button{
+        background-color: aquamarine;
+        border: none;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        border-radius: 20px;
+    }
+    a{
+        color: red;
+        text-decoration: none;
+      
+    }
+}
+.about{
+    margin-left: 20px;
+}
