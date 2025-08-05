@@ -1,6 +1,6 @@
 
 body{
-    background-image: url(restaurantbackground.jpg);
+    
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -9,18 +9,15 @@ body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
+    
+    
 }        
 #va{
     font-size: small;
     font-family: 'Times New Roman', Times, serif;
     color: white;
 }
-.head{
-    font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
-    color: white;
-    text-align:center;
-}
+
 .nav{
     display: flex;
     background-color: rgb(0, 0, 0);
@@ -58,7 +55,7 @@ body{
     
 }
 #topic{
-    font-size: 30px;
+    font-size: 30px !important;
     color: white;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
@@ -122,17 +119,137 @@ body{
     margin-left: 20px;
 }
 
-.heading{
-   display: flex;
-   justify-content: space-evenly;
-   align-items: center;
-   background-color: rgba(234, 0, 255, 0.125);
-   opacity: 40px;
-   font-weight: bolder;
-   padding: 10px;
-}
+
 .imglogo{
      height: 400px;
      width: 400px;
      border-radius: 50%;
+}
+
+
+.menu-card {
+  width: 250px;
+  background-color: #ed0000a2;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin: 15px;
+  transition: transform 0.3s;
+}
+
+.menu-card:hover {
+  transform: scale(1.03);
+}
+
+.menu-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.menu-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.menu-info h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.menu-info p {
+  font-size: 14px;
+  color: #666;
+}
+
+.order-btn {
+  margin-top: 10px;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.order-btn:hover {
+  background-color: #c9302c;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 30px;
+}
+
+.carousel {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-card {
+  flex: 0 0 250px;
+  scroll-snap-align: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.menu-card:hover {
+  transform: scale(1.05);
+}
+
+.menu-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.menu-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+.menu-i{
+    margin:0;
+    padding:0;
+}
+.container {
+	max-width: 1180px;
+	margin: 0 auto;
+	line-height: 1.5;
 }

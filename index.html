@@ -1,113 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delicious bite menu</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delicious Bite Menu</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<nav class="nav">
-   <a href="" id="va">HOME</a>
-   <a href="" class="about"id="va">ABOUT</a>
-   <a href="#topic" class="menu" id="va">MENU</a>
-   <a href="" class="contact" id="va">CONTACT</a>
-   
-</nav>
-<div class='heading'>
+  <nav class="nav" style=' display: flex;
+    background-color: rgb(0, 0, 0);
+    align-items: center;
+    justify-content: center;
+    background-attachment: scroll;
+    position: sticky;
+    top: 0;'>
+    <a href="" id="va">HOME</a>
+    <a href="" class="about" id="va">ABOUT</a>
+    <a href="#topic" class="menu" id="va">MENU</a>
+    <a href="#contact" class="contact" id="va">CONTACT</a>
+  </nav>
+
+  <div class="heading" style="display: flex; justify-content: space-between; align-items: center; padding: 60px; background-image:url('restaurantbackground.jpg') ;  background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;">
+    <div>
+      <div  style="display: flex; flex-direction: column; justify-content: space-evenly; align-self: start;">
+         <div>
+         <h1 style="font-size: 60px;">A Chef in Every<br>Tasty Meal Box</h1>
+      </div>
+      <div>
+         Get pre-portioned ingredients for Combo Meal yss <br>
+         best recipes defined directly to your throat
+      </div>
+      <br>
+       <div style="display: flex; justify-content: space-between; align-items: last baseline; ">
+         <div>
+        <button style="background-color: rgb(254, 0, 0); padding-left: 28px; padding-right: 28px; padding-bottom: 10px; padding-top: 10px; border: none;
+        border-radius: 10px; font-family: cursive; font-weight: bold; color: white;
+        " >select progress</button>
+      </div>
+      <div>
+        <button style="background-color: rgba(0, 0, 0, 0); padding-left: 28px; padding-right: 28px; padding-bottom: 10px; padding-top: 10px; border: 2px solid white;
+        border-radius: 10px; font-family: cursive; font-weight: bold; color: white;
+        ">View Menu</button>
+      </div>
+      </div>
+      </div>
+    </div>
+    <div>
+      <img src="cookine him.webp" alt="AVE Logo" style="height: 330px; border-radius: 20px;" />
+    </div>
+  </div>
+
+   <h3 id="topic" style="text-align: center; font-size: 28px; margin-top: 20px;">Menu</h3>
+
+<div style="position: relative; width: 100%; overflow: hidden; padding: 30px 0;background-color: rgb(0, 0, 0);">
+  <button onclick="scrollCarousel(-1)" style="
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+  ">⟨</button>
+
+  <div id="menu-api" style="
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 40px;
+    scroll-snap-type: x mandatory;
+  ">
+    <!-- Cards will be injected here -->
+  </div>
+
+  <button onclick="scrollCarousel(1)" style="
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+  ">⟩</button>
+</div>
+
+<section style="
+  background-color: #fefefe;
+  padding: 40px 20px;
+  text-align: left;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+">
 <div>
-  <h1 class="head"> Welcome to AVE RESTAURANT <br> Where every meal is a story, and every bite feels like home. <br>
-Fresh ingredients, bold flavors, and unforgettable vibes —
-Pull up a chair. <br> You’re exactly where you need to be.</h1>
+  <h2 style="
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: cursive;
+  ">About Us</h2>
+
+  <p style="
+    max-width: 700px;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 300;
+  ">
+    Welcome to our food menu app — your one-stop destination for discovering delicious meals.
+    We bring together a wide range of recipes and meals that suit every taste and craving.
+    Whether you’re searching for your next favorite dish or just hungry for inspiration,
+    our menu has got you covered. Fast, easy, and made with love.
+  </p>
 </div>
+  <div >
+   <img src="someone cooking.jpeg" alt="" style="height: 400px; width: 600px;">
+  </div>
+</section>
+
+<section style="
+  background-color: #ffffff;
+  padding: 40px 20px;
+  text-align: left;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+">
+<div >
+   <img src="mission.jpg" alt="" style="height: 400px; width: 600px;">
+  </div>
 <div>
-  <img src="restaurant logo.jpg" alt="" class="imglogo">
+  <h2 style="
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: #333;
+  ">Our Mission</h2>
+
+  <p style="
+    max-width: 700px;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #000000;
+    font-weight: 300;
+  ">
+    Welcome to our food menu app — your one-stop destination for discovering delicious meals.
+    We bring together a wide range of recipes and meals that suit every taste and craving.
+    Whether you’re searching for your next favorite dish or just hungry for inspiration,
+    our menu has got you covered. Fast, easy, and made with love.
+  </p>
 </div>
+  
+</section>
+
+
+
+  <!-- 🔥 Contact Section Start -->
+  <section id="contact" style="padding: 30px; background-color: rgba(255, 0, 0, 0.389); align-items: center; justify-content: space-evenly ; display: flex; flex-wrap: nowrap;">
+   <div style=" border: 2px solid black; padding: 50px; background-color: rgba(62, 217, 38, 0.459); border-radius: 20px;">
+    <h2 style="text-align: center;">Get in Touch</h2>
+    <form style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" placeholder="Enter your text" required style="height: 30px; width: 200px; border-radius: 5px;"/><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" placeholder="Enter your email " required style="height: 30px; width: 200px; border-radius: 5px;"/><br />
+
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" rows="5" placeholder="Enter your Message" style="height: 30px; width: 200px; border-radius: 5px;"></textarea><br />
+
+      <button type="submit" style='background-color: rgb(199, 6, 6); border-radius: 10px; border: none; padding: 15px;' >Send Message</button>
+    </form>
 </div>
-    <h3 id="topic"> Menu</h3>
-    <div class="second">
-<div class="appetizer">
-    <h2>Appetizers</h2>  
+    <div>
+      <h3>Connect With Us</h3>
+      <p>📍 Lagos, Nigeria</p>
+      <p>📞 +234 901 234 5678</p>
+      <p>📧 averestaurant@email.com</p>
 
-  <ul>     
+      <div>
+        <a href="#">Instagram</a> |
+        <a href="#">Twitter</a> |
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+  </section>
 
-   <li>          
+  <!-- 🔥 Contact Section End -->
 
-  <strong>Caprese Salad</strong>       
-
-     <p>Fresh tomatoes, mozzarella, and basil drizzled with balsamic glaze.</p> 
-
-       </li>    
-     <li>
-        <strong>Jollof rice</strong>
-        <p> pepper,tiomatoes.onion,rice and salt</p>
-     </li>
-     <li>
-        <strong>Indomie and eggs</strong>
-        <p>noodle,egg,pepper,season</p>
-     </li>
-    <!-- Add two more appetizer items with descriptions --> 
-     
-   </ul> 
-</div> 
-<div class="main">
-
-  <h2>MainCourses</h2> 
-
-   <ul>   
-
-     <li>      
-
-      <strong>Grilled Salmon</strong>     
-
-       <p>Salmon fillet seasoned and grilled to perfection, served with lemon butter sauce.</p>   
-
-     </li>     
-
-   <li>
-      <strong>Akara</strong>
-      <p>natively done akara ,fried to perfection</p>
-   </li>
-   <li>
-      <strong>fried rice</strong>
-      <p>served with peas ,pepper and a hint of lemon zest</p>
-   </li>
-
-   </ul>   
-</div>
-
-<div class="dessert">
- <h2>Desserts</h2>  
-
-  <ul>     
-
-   <li>    
-
-        <strong>Chocolate Fondue</strong>     
-
-       <p>Assorted fruits and marshmallows served with rich chocolate fondue.</p>    
-
-    </li>    
-   <li>
-      <strong>vanilla ice-cream</strong>
-      <p>made with vanilla,strawberries, and cream cheese</p>
-   </li>
-   <li>
-   <strong>strawberry cup-cakes</strong>
-    <p>made with strawberry and cakes</p>
-   </li>
-  </ul>
-</div> 
- <div>
-   
-
-
- </div>
-</div>
-
-
+  <script src="index.js"></script>
 </body>
 </html>
-
- 
-
