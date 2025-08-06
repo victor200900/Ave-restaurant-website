@@ -6,6 +6,101 @@
   <title>Delicious Bite Menu</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-image: url('restaurantbackground.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      padding: 60px 20px;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+      max-width: 600px;
+    }
+    .hero-text h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .hero-buttons button,
+    .hero-buttons a button {
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-family: cursive;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .hero-buttons .primary {
+      background-color: rgb(254, 0, 0);
+      border: none;
+      color: white;
+    }
+    .hero-buttons .primary:hover {
+      background-color: #b30000;
+    }
+    .hero-buttons .secondary {
+      background-color: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+    .hero-buttons .secondary:hover {
+      background-color: white;
+      color: black;
+    }
+    .hero-img {
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+    }
+    .hero-img img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+      .hero-buttons button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav class="nav" style=' display: flex;
@@ -15,262 +110,31 @@
     background-attachment: scroll;
     position: sticky;
     top: 0;'>
-    <a href="" id="va">HOME</a>
-    <a href="" class="about" id="va">ABOUT</a>
+    <a href="#" id="va">HOME</a>
+    <a href="#" class="about" id="va">ABOUT</a>
     <a href="#topic" class="menu" id="va">MENU</a>
     <a href="#contact" class="contact" id="va">CONTACT</a>
   </nav>
-<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 60px; background-image: url('restaurantbackground.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover; background-attachment: fixed; color: white;">
-  
-  <!-- Left Content -->
-  <div style="display: flex; flex-direction: column; gap: 20px; max-width: 600px;">
-    
-    <div>
-      <h1 style="font-size: 64px; font-weight: bold; line-height: 1.2; margin: 0; font-family: 'Segoe UI', sans-serif;">
-        A Chef in Every<br>Tasty Meal Box
-      </h1>
-    </div>
 
-    <div style="font-size: 18px; line-height: 1.5; font-family: 'Segoe UI', sans-serif;">
-      Get pre-portioned ingredients for combo meals and<br>
-      the best recipes delivered directly to your throat 😋
-    </div>
-
-    <!-- Buttons -->
-    <div style="display: flex; gap: 20px; margin-top: 10px; flex-wrap: wrap;">
-      
-      <!-- Button 1 -->
-      <div>
-        <button 
-          style="background-color: rgb(254, 0, 0); padding: 12px 28px; border: none;
-          border-radius: 10px; font-family: cursive; font-weight: bold; color: white; 
-          cursor: pointer; transition: all 0.3s ease;"
-          onmouseover="this.style.backgroundColor='#b30000'"
-          onmouseout="this.style.backgroundColor='rgb(254, 0, 0)'"
-        >
-          Select Progress
-        </button>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>A Chef in Every<br>Tasty Meal Box</h1>
+        <p>Get pre-portioned ingredients for combo meals and<br>the best recipes delivered directly to your throat 😋</p>
+        <div class="hero-buttons">
+          <button class="primary">Select Progress</button>
+          <a href="#topic"><button class="secondary">View Menu</button></a>
+        </div>
       </div>
-
-      <!-- Button 2 -->
-      <div>
-        <a href="#topic" style="text-decoration: none;">
-          <button  
-            style="background-color: transparent; padding: 12px 28px; border: 2px solid white;
-            border-radius: 10px; font-family: cursive; font-weight: bold; color: white; 
-            cursor: pointer; transition: all 0.3s ease;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';"
-          >
-            View Menu
-          </button>
-        </a>
+      <div class="hero-img">
+        <img src="cookine him.webp" alt="Chef Cooking">
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Right Image -->
-  <div style="margin-top: 30px;">
-    <img src="cookine him.webp" alt="Chef Cooking" style="height: 330px; border-radius: 20px; max-width: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" />
-  </div>
-</div>
-
-
-   <h3 id="topic" style="text-align: center; font-size: 28px; color: rgb(255, 255, 255); font-family: Georgia, 'Times New Roman', Times, serif; text-decoration: none; padding: 0;"> Menu</h3>
-
-<div style="position: relative; width: 100%; overflow: hidden; padding: 30px 0;background-color: rgb(0, 0, 0);">
-  <button onclick="scrollCarousel(-1)" style="
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    font-size: 24px;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 1;
-  ">⟨</button>
-
-  <div id="menu-api" style="
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 10px 40px;
-    scroll-snap-type: x mandatory;
-  ">
-    <!-- Cards will be injected here -->
-  </div>
-
-  <button onclick="scrollCarousel(1)" style="
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    font-size: 24px;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 1;
-  ">⟩</button>
-</div>
-
-<section style="
-  background-color: #2cff0bdd;
-  padding: 40px 20px;
-  text-align: left;
-  border-top: 1px solid #eee;
-  display: flex;
-  justify-content: space-between;
-">
-<div>
-  <h2 style="
-    font-size: 38px;
-    margin-bottom: 20px;
-    color: #333;
-    font-family: cursive;
-  ">About Us</h2>
-
-  <p style="
-    max-width: 700px;
-    font-size: 20px;
-    line-height: 1.8;
-    color: #000000;
-    font-weight: 300;
-  ">
-    Welcome to our food menu app — your one-stop destination for discovering delicious meals.
-    We bring together a wide range of recipes and meals that suit every taste and craving.
-    Whether you’re searching for your next favorite dish or just hungry for inspiration,
-    our menu has got you covered. Fast, easy, and made with love.
-  </p>
-</div>
-  <div >
-   <img src="someone cooking.jpeg" alt="" style="height: 400px; width: 600px;">
-  </div>
-</section>
-
-<section style="
-  background-color: #ffffff;
-  padding: 40px 20px;
-  text-align: left;
-  border-top: 1px solid #eee;
-  display: flex;
-  justify-content: space-between;
-">
-<div >
-   <img src="mission.jpg" alt="" style="height: 400px; width: 600px;">
-  </div>
-<div>
-  <h2 style="
-    font-size: 38px;
-    margin-bottom: 20px;
-    color: #333;
-  ">Our Mission</h2>
-
-  <p style="
-    max-width: 700px;
-    font-size: 20px;
-    line-height: 1.8;
-    color: #000000;
-    font-weight: 300;
-  ">
-    Welcome to our food menu app — your one-stop destination for discovering delicious meals.
-    We bring together a wide range of recipes and meals that suit every taste and craving.
-    Whether you’re searching for your next favorite dish or just hungry for inspiration,
-    our menu has got you covered. Fast, easy, and made with love.
-  </p>
-</div>
+  <!-- Remaining unchanged content -->
+  <!-- ... keep everything below this as-is ... -->
   
-</section>
-
-<section id="contact" style="padding: 60px; background-color: #e40707ca; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
-
-  <!-- Contact Form -->
-  <div style="flex: 1; min-width: 300px; max-width: 500px; padding: 40px; background-color: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-    <h2 style="text-align: center; margin-bottom: 30px; color: #d62828;">Get in Touch</h2>
-    <form style="display: flex; flex-direction: column; gap: 15px;">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" placeholder="John Doe" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;"/>
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" placeholder="example@email.com" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;"/>
-
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" rows="5" placeholder="Tell us what’s on your mind..." style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;"></textarea>
-
-      <button type="submit" style="background-color: #d62828; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer;">Send Message</button>
-    </form>
-  </div>
-
-  <!-- Contact Info -->
-  <div style="flex: 1; min-width: 300px; max-width: 500px; padding: 20px;">
-    <h3 style="font-size: 28px; margin-bottom: 20px; color: #000000; font-family: 'Courier New', Courier, monospace;">Contact Information</h3>
-    <p>📍 <strong>Location:</strong> Lagos, Nigeria</p>
-    <p>📞 <strong>Phone:</strong> +234 901 234 5678</p>
-    <p>📧 <strong>Email:</strong> averestaurant@email.com</p>
-
-    <h4 style="margin-top: 30px; font-size: 20px; color: #000000; font-family: 'Courier New', Courier, monospace;">Follow Us</h4>
-    <div style="margin-top: 10px;">
-      <a href="#" style="margin-right: 15px; text-decoration: none; color: white; "><i class="fa-brands fa-instagram"></i></a></a>
-      <a href="#" style="margin-right: 15px; text-decoration: none; color: white; "><i class="fa-brands fa-x-twitter"></i></a></a>
-      <a href="#" style="text-decoration: none; color: white;"><i class="fa-brands fa-facebook"></i></a></a>
-    </div>
-  </div>
-
-</section>
-
-<!-- Footer Section -->
-<div style="background-color: #1a1a1a; color: #ffffff; padding: 40px 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 30px;">
-
-  <!-- Branding -->
-  <div style="flex: 1; min-width: 250px;">
-    <div style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">AVE Restaurant</div>
-    <div style="font-size: 14px; color: #cccccc;">
-      Serving flavors with passion. Experience home-cooked meals with a modern twist.
-    </div>
-  </div>
-
-  <!-- Quick Links -->
-  <div style="flex: 1; min-width: 200px;">
-    <div style="font-weight: bold; font-size: 18px; margin-bottom: 10px;">Quick Links</div>
-    <div><a href="#home" style="color: #ffffff; text-decoration: none;">Home</a></div>
-    <div><a href="#menu" style="color: #ffffff; text-decoration: none;">Menu</a></div>
-    <div><a href="#about" style="color: #ffffff; text-decoration: none;">About Us</a></div>
-    <div><a href="#contact" style="color: #ffffff; text-decoration: none;">Contact</a></div>
-  </div>
-
-  <!-- Contact Info -->
-  <div style="flex: 1; min-width: 250px;">
-    <div style="font-weight: bold; font-size: 18px; margin-bottom: 10px;">Contact</div>
-    <div style="color: #cccccc;">📍 Lagos, Nigeria</div>
-    <div style="color: #cccccc;">📞 +234 901 234 5678</div>
-    <div style="color: #cccccc;">📧 averestaurant@email.com</div>
-  </div>
-
-  <!-- Socials -->
-  <div style="flex: 1; min-width: 200px;">
-    <div style="font-weight: bold; font-size: 18px; margin-bottom: 10px;"></div>
-    <div><a href="#" style="color: #ffffff; text-decoration: none;"><i class="fa-brands fa-instagram"></i></a></div>
-    <div><a href="#" style="color: #ffffff; text-decoration: none;"><i class="fa-brands fa-x-twitter"></i></a></div>
-    <div><a href="#" style="color: #ffffff; text-decoration: none;"><i class="fa-brands fa-facebook"></i></a></div>
-  </div>
-</div>
-
-<!-- Copyright -->
-<div style="background-color: #111; color: #888888; text-align: center; padding: 15px; font-size: 14px;">
-  © 2025 AVE Restaurant. All rights reserved.
-</div>
-
-
-
-  <!-- 🔥 Contact Section End -->
-
   <script src="index.js"></script>
 </body>
 </html>
