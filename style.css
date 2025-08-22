@@ -235,12 +235,14 @@ body{
 .carousel-btn.next {
   right: 10px;
 }
-.menu-i{
-    margin:0;
-    padding:0;
-}
+
 .container {
-	max-width: 1180px;
+	max-width: 1260px;
 	margin: 0 auto;
 	line-height: 1.5;
+}
+
+
+#topic{
+  background-color: #c9302c;
 }

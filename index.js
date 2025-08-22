@@ -1,5 +1,5 @@
 const apiKey = "e8e356d8c1b24337866570c344a7a88f";
-const menuDiv = document.getElementById ("menu-api");
+const menuDiv = document.getElementById("menu-api");
 const cart = document.querySelector(".cart"); // using class instead of id
 
 let orders = []; // store all orders
@@ -38,16 +38,27 @@ fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number
 
 // Show cart items
 function showCart() {
+  if (!cart) return; // safety check
+  
   if (orders.length === 0) {
-    cart.innerHTML = "<p>Your cart is empty</p>";
+    cart.innerHTML = `<p class="empty-cart">Your cart is empty</p>`;
   } else {
     cart.innerHTML = orders
       .map(order => `
         <div class="cart-item">
-          <img src="${order.image}" alt="${order.title}" style="width:50px;height:50px"/>
-          <span>${order.title}</span>
+          <img src="${order.image}" alt="${order.title}" class="cart-img"/>
+          <span class="cart-title">${order.title}</span>
+          <span class="cart-price">$${order.price}</span>
+          <button class="remove-btn" onclick="removeFromCart('${order.id}')">Remove</button>
         </div>
       `)
       .join("");
   }
 }
+function openWhatsApp() {
+      let phone = "2347045939049";  
+      let message = document.getElementById("message").value;  
+      let encodedMessage = encodeURIComponent(message);
+      let url = `https://wa.me/${phone}?text=${encodedMessage}`;
+      window.open(url, "_blank");
+    }
