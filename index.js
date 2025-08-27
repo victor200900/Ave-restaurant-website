@@ -13,7 +13,7 @@ fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number
       const div = document.createElement("div");
       div.className = "col-md-4"; // bootstrap grid column
       div.innerHTML = `
-        <div class="card border-0 shadow-sm h-100">
+        <div class="card border-0 shadow-sm h-100" style="background-color: #27f00d92;">
           <img src="${item.image}" alt="${item.title}" class="card-img-top" />
           <div class="card-body text-center">
             <h5 class="card-title">${item.title}</h5>
