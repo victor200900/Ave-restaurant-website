@@ -7,10 +7,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- AOS Animation CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 </head>
-<body style="background-color: #000; color: white;">
+<body style="background-color: rgb(219, 69, 14); color: white;">
  <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm" data-aos="fade-down">
   <div class="container">
     <a class="navbar-brand fw-bold fs-4" href="#">AVE Restaurant</a>
     
@@ -44,32 +46,34 @@
 
 
   <!-- Hero Section -->
-  <div class="container py-5 d-flex flex-column flex-lg-row align-items-center justify-content-between">
-    <div class="all text-white mb-4">
+  <div class="all2 py-5 d-flex flex-column flex-lg-row align-items-center justify-content-between">
+    <div class="all text-white mb-4" data-aos="fade-right">
       <h1 class="display-4 fw-bold">A Chef in Every<br>Tasty Meal Box</h1>
       <p>Get pre-portioned ingredients for Combo Meal<br>Best recipes delivered directly to your throat</p>
-      <div class="d-flex gap-3 mt-4">
+      <div class= "d-flex gap-3 mt-4">
        <a href="#about"><button class="btn btn-danger px-4 py-2">About us</button></a>
         <a href="#topic" class="btn btn-outline-light px-4 py-2">View Menu</a>
       </div>
     </div>
-    <img src="cookine him.webp" alt="AVE Logo" class="img-fluid rounded" style="max-height: 500px;" />
+    <div class="all" data-aos="fade-left">
+      <img src="woman-removebg-preview.png" alt="AVE Logo" class="img-fluid rounded" style="max-height: 500px;" />
+    </div>
   </div>
 
   <!-- Menu Section -->
-  <h3 id="topic" class="text-center fs-3">Menu</h3>
-  <div class="position-relative bg-black py-4">
-    <button onclick="scrollCarousel(-1)" class="btn btn-dark position-absolute top-50 start-0 translate-middle-y z-3">⟨</button>
-    <div id="menu-api" class="d-flex overflow-auto px-4 gap-3" style="scroll-snap-type: x mandatory;">
-      <!-- Cards go here -->
-    </div>
-    <button onclick="scrollCarousel(1)" class="btn btn-dark position-absolute top-50 end-0 translate-middle-y z-3">⟩</button>
+<section class="container my-5" id="topic" data-aos="zoom-in">
+  <h3 class="text-center fs-3 mb-4">Tasty Dishes</h3>
+
+  <div class="row g-4" id="menu-api">
+    <!-- API items will go here -->
   </div>
+</section>
+
 
   <!-- About Section -->
-  <section class="bg-danger text-white py-5" id="about">
+  <section class="bg-danger text-white py-5" id="about" data-aos="zoom-out">
     <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4">
-      <div>
+      <div class="about">
         <h2 class="fs-1">About Us</h2>
         <p class="fs-5"> 
           Welcome to our food menu app — your one-stop destination for discovering delicious meals.
@@ -83,22 +87,26 @@
   </section>
 
   <!-- Mission Section -->
-  <section class="bg-dark text-white py-5">
+  <section class="bg-dark text-white py-5" data-aos="zoom-in">
     <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4">
-      <img src="mission.jpg" class="img-fluid" style="max-height: 400px;" alt="Mission image">
-      <div>
+      <img src="mission.jpg" class="img-fluid" style="max-height: 400px;" alt="Mission image" data-aos="fade-right">
+      <div class="mission" data-aos="fade-left">
         <h2 class="fs-1">Our Mission</h2>
         <p class="fs-5">
-          Same as above content — describe the mission clearly and simply.
+          At AVE Restaurant, our mission is simple yet powerful: to bring people together through food. We believe that every meal should be more than just something to eat—it should be an experience that warms the heart, sparks conversation, and leaves lasting memories.
+
+We are committed to creating dishes that are both delicious and freshly made, using carefully sourced ingredients to guarantee taste and quality in every bite. Beyond serving great meals, our goal is to blend tradition with modern convenience, allowing customers to explore our menu, order with ease, and enjoy restaurant-quality dining anytime.
+
+Through technology, passion, and creativity, we aim to make AVE Restaurant not just a place to eat, but a place where culture, flavor, and community meet. Whether you’re here for a quick bite, a family meal, or to discover something new, our mission is to make sure every visit feels special.
         </p>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="bg-danger py-5 text-dark">
+  <section id="contact" class="bg-danger py-5 text-dark" data-aos="fade-up">
     <div class="container d-flex flex-column flex-lg-row justify-content-between gap-5">
-      <div class="bg-white p-4 rounded shadow flex-fill">
+      <div class="contact bg-white p-4 rounded shadow flex-fill" data-aos="fade-right">
         <h2 class="text-center text-danger">Get in Touch</h2>
         <form class="mt-4">
           <div class="mb-3">
@@ -112,7 +120,7 @@
           <button class="btn btn-danger w-100" onClick ='openWhatsApp()'>Send Message</button>
         </form>
       </div>
-      <div class="flex-fill">
+      <div class="flex-fill" data-aos="fade-left">
         <h3 class="fs-3">Contact Information</h3>
         <p><strong>Location:</strong> Lagos, Nigeria</p>
         <p><strong>Phone:</strong> +234 901 234 5678</p>
@@ -128,7 +136,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black text-white py-4">
+  <footer class="bg-black text-white py-4" data-aos="fade-up">
     <div class="container d-flex flex-wrap justify-content-between gap-4">
       <div>
         <h5>AVE Restaurant</h5>
@@ -163,5 +171,13 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="index.js"></script>
+  <!-- AOS Animation JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000, // animation duration (ms)
+      once: true      // run only once
+    });
+  </script>
 </body>
 </html>

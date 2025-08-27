@@ -1,40 +1,34 @@
 const apiKey = "e8e356d8c1b24337866570c344a7a88f";
 const menuDiv = document.getElementById("menu-api");
-const cart = document.querySelector(".cart"); // using class instead of id
+const cart = document.getElementById("cart"); // using class instead of id
 
 let orders = []; // store all orders
-
 fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=6`)
   .then(res => res.json())
   .then(data => {
+    const menuApi = document.getElementById("menu-api");
+    menuApi.innerHTML = ""; // clear before adding new items
+
     data.results.forEach(item => {
       const div = document.createElement("div");
-      div.className = "api-item";
+      div.className = "col-md-4"; // bootstrap grid column
       div.innerHTML = `
-        <div class="menu-i">
-          <div class="menu-card">
-            <img src="${item.image}" alt="${item.title}" class="menu-img" />
-            <div class="menu-info">
-              <h3>${item.title}</h3>
-              <p>Delicious and freshly made — try it today!</p>
-              <button class="order-btn" onClick='showCart()'>Order Now</button>
-            </div>
+        <div class="card border-0 shadow-sm h-100">
+          <img src="${item.image}" alt="${item.title}" class="card-img-top" />
+          <div class="card-body text-center">
+            <h5 class="card-title">${item.title}</h5>
+            <p class="card-text small text-muted">
+              Delicious and freshly made — try it today!
+            </p>
+            <button class="btn btn-dark mt-2" onClick='showCart()'>Order Now</button>
           </div>
         </div>
       `;
-      menuDiv.appendChild(div);
-
-      // Add click event for order button
-      div.querySelector(".order-btn").addEventListener("click", () => {
-        orders.push(item); // add item to cart array
-        alert(`${item.title} added to cart`);
-      });
+      menuApi.appendChild(div);
     });
   })
-  .catch(err => {
-    menuDiv.innerHTML = "<p> Check your internet connection and try again.</p>";
-    console.error(err);
-  });
+  .catch(error => console.error("Error fetching menu:", error));
+
 
 // Show cart items
 function showCart() {
