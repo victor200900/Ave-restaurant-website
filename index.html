@@ -85,15 +85,14 @@
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#topic">Menu</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)" onclick="toggleCart()">
-            <i class="fa-solid fa-cart-shopping"></i> Cart 
-            <span id="cart-count" class="badge bg-danger rounded-pill ms-1">0</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
+       <li class="nav-item">
+  <a class="nav-link" href="javascript:void(0)" onclick="toggleCart()">
+    <i class="fa-solid fa-cart-shopping" onclick="toggleCart()"></i> Cart 
+    <span id="cart-count" class="badge bg-danger rounded-pill ms-1">0</span>
+  </a>
+</li>
+  </ul>
+  
 </nav>
 
 <!-- Hero -->
@@ -110,9 +109,33 @@
 
 <!-- Menu -->
 <section class="container my-5" id="topic" data-aos="fade-up">
-  <h3 class="text-center fs-1 mb-5">Our Signature Dishes</h3>
-  <div id="menu-api"></div>
+  <h3 class="text-center fs-1 mb-5 text-gradient"> Our Signature Dishes </h3>
+
+  <!-- Modern Search Bar -->
+  <div class="search-bar-wrapper mb-5">
+    <input 
+      type="text" 
+      id="searchInput" 
+      class="form-control search-input" 
+      placeholder="🔍 Search yourf avourite meals... e.g. chicken, rice, beef" 
+    />
+  </div>
+
+  <!-- Menu Grid -->
+  <section class="menu-section">
+  <h2 class="menu-title">Our Menu</h2>
+
+  <div class="carousel-container">
+    <button class="carousel-btn prev">&#10094;</button>
+
+    <div id="menuGrid" class="menu-grid">
+      <!-- JS will inject menu items here -->
+    </div>
+
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
 </section>
+
 
 <!-- About -->
 <section class="py-5" id="about" data-aos="fade-up">
@@ -199,18 +222,7 @@
 <!-- Scroll To Top -->
 <button onclick="topFunction()" id="scrollTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
 
-<!-- Cart Sidebar -->
-<div class="cart-sidebar" id="cartSidebar">
-  <div class="cart-header">
-    <span><i class="fa-solid fa-cart-shopping me-2"></i> Your Cart</span>
-    <span class="cart-close" onclick="toggleCart()">&times;</span>
-  </div>
-  <div id="cart"></div>
-  <div class="cart-footer">
-    <h5>Total: <span id="cart-total">$0.00</span></h5>
-    <button class="btn btn-success w-100 mt-3">Checkout</button>
-  </div>
-</div>
+
 
 <!-- Scripts -->
 <script src="index.js"></script>
@@ -220,24 +232,12 @@
   AOS.init({ duration: 1000, once: true });
 
   // Navbar color on scroll
-  window.addEventListener("scroll", function(){
-    let nav = document.querySelector(".navbar");
-    nav.classList.toggle("scrolled", window.scrollY > 50);
-  });
+
 
   // Scroll to top button
-  let mybutton = document.getElementById("scrollTopBtn");
-  window.onscroll = function() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      mybutton.style.display = "block";
-    } else {
-      mybutton.style.display = "none";
-    }
-  };
-  function topFunction() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
+  
+ 
+  
   // WhatsApp integration
   function openWhatsApp() {
     let name = document.getElementById("name").value;
@@ -247,9 +247,7 @@
   }
 
   // Toggle cart sidebar
-  function toggleCart() {
-    document.getElementById("cartSidebar").classList.toggle("active");
-  }
+  
 </script>
 </body>
 </html>
