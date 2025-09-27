@@ -1,24 +1,28 @@
 // ✅ Inject CSS styles directly from JS
-const styles = ` 
+const styles = `
   body {
-    background: #111;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  body:not(.dark-mode) {
+    background: #fdfdfd;
+    color: #222;
+  }
+
+  body.dark-mode {
+    background: #111;
     color: white;
   }
+
   h1 {
     text-align: center;
     color: #ffcc00;
     margin-bottom: 20px;
   }
-  .carousel-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    margin-top: 20px;
-  }
+
   #menuGrid {
     display: flex;
     gap: 18px;
@@ -26,7 +30,7 @@ const styles = `
     scroll-behavior: smooth;
     padding: 10px 0;
   }
-  #menuGrid::-webkit-scrollbar { display: none; }
+
   .menu-card {
     flex: 0 0 auto;
     width: 210px;
@@ -37,15 +41,22 @@ const styles = `
     border: 1px solid #f1f1f1;
     display: flex;
     flex-direction: column;
+    min-height: 340px;
     transition: box-shadow 0.2s, transform 0.2s;
     cursor: pointer;
-    min-height: 340px;
   }
+
+  body.dark-mode .menu-card {
+    background: #2a2a2a;
+    color: #f0f0f0;
+  }
+
   .menu-card:hover {
-    box-shadow: 0 8px 24px rgba(255, 204, 0, 0.18), 0 2px 8px rgba(0,0,0,0.10);
+    box-shadow: 0 8px 24px rgba(255, 204, 0, 0.18);
     transform: translateY(-4px) scale(1.02);
     border-color: #ffcc00;
   }
+
   .menu-img {
     width: 100%;
     height: 170px;
@@ -53,68 +64,124 @@ const styles = `
     background: #f5f5f5;
     border-bottom: 1px solid #eee;
   }
-  .menu-info { padding: 14px 12px; text-align: left; }
-  .menu-info h3 { font-size: 16px; font-weight: 600; color: #232323; margin: 0 0 8px; }
-  .price { color: #ff5722; font-weight: bold; font-size: 16px; }
+
+  .menu-info {
+    padding: 14px 12px;
+    text-align: left;
+  }
+
+  .menu-info h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+
+  .price {
+    color: #ff5722;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
   .order-btn {
-    display: block; width: 100%;
+    display: block;
+    width: 100%;
     background: linear-gradient(90deg, #ffcc00 0%, #ff5722 100%);
-    color: #232526; border: none; padding: 10px 0;
-    border-radius: 7px; cursor: pointer; font-weight: bold;
+    color: #232526;
+    border: none;
+    padding: 10px 0;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
     margin-top: 8px;
   }
-  .order-btn:hover {
-    background: linear-gradient(90deg, #ff5722 0%, #ffcc00 100%);
+
+  body.dark-mode .order-btn {
+    background: linear-gradient(90deg, #444 0%, #222 100%);
     color: #fff;
   }
+
   .carousel-btn {
-    position: absolute; top: 50%;
+    position: absolute;
+    top: 50%;
     transform: translateY(-50%);
-    background: #000; color: #fff;
-    border: none; padding: 10px;
-    border-radius: 50%; cursor: pointer;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
     z-index: 10;
   }
+
   .carousel-btn.prev { left: 10px; }
   .carousel-btn.next { right: 10px; }
 
-  /* Sidebar (Cart) */
   .cart-sidebar {
-    position: fixed; top: 0; right: -400px;
-    width: 370px; height: 100vh;
-    background: linear-gradient(135deg, #232526 0%, #414345 100%);
-    color: #fff;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 370px;
+    height: 100vh;
+    background: #fff;
+    color: #111;
     box-shadow: -8px 0 32px rgba(0,0,0,0.7);
     padding: 24px;
     transition: right 0.4s ease;
     overflow-y: auto;
     z-index: 2000;
-    display: flex; flex-direction: column;
+    display: flex;
+    flex-direction: column;
     border-top-left-radius: 24px;
     border-bottom-left-radius: 24px;
   }
+
+  body.dark-mode .cart-sidebar {
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    color: #fff;
+  }
+
   .cart-sidebar.active { right: 0; }
-  .cart-header {
-    display:flex; justify-content:space-between; align-items:center;
-    font-size:18px; font-weight:bold; margin-bottom:20px;
-  }
-  .cart-close { cursor:pointer; font-size:24px; }
+
   .cart-item {
-    background:#2a2a2a; border-radius:12px;
-    padding:10px; margin-bottom:15px;
-    display:flex; justify-content:space-between; align-items:center;
+    background: #f5f5f5;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  .cart-item img { width:60px; height:60px; border-radius:8px; margin-right:10px; }
-  .qty-btn { padding:4px 10px; border:none; border-radius:6px; cursor:pointer; }
-  .remove-btn { background:none; border:none; color:#ff4444; font-size:20px; cursor:pointer; }
-  .cart-footer { margin-top:auto; text-align:center; }
+
+  body.dark-mode .cart-item {
+    background: #2a2a2a;
+  }
+
+  .qty-btn, .remove-btn {
+    background: #eee;
+    color: #111;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  body.dark-mode .qty-btn, body.dark-mode .remove-btn {
+    background: #444;
+    color: #fff;
+  }
+
   .checkout-btn {
-    background:linear-gradient(90deg,#ffcc00,#ff5722);
-    border:none; padding:12px; border-radius:8px;
-    font-weight:bold; font-size:16px; cursor:pointer;
+    background: linear-gradient(90deg,#ffcc00,#ff5722);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
   }
 `;
 document.head.insertAdjacentHTML("beforeend", `<style>${styles}</style>`);
+
 
 // ✅ Elements
 let menuGrid = document.getElementById("menuGrid");
@@ -249,3 +316,26 @@ function searchMeal() {
     });
 }
 document.getElementById("searchInput").addEventListener("keyup", e => { if (e.key === "Enter") searchMeal(); });
+
+
+
+  const themeToggle = document.getElementById("themeToggle");
+
+  // Load saved theme from localStorage
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    themeToggle.textContent = "☀️ Light Mode";
+  } else {
+    document.body.classList.remove("dark-mode");
+    themeToggle.textContent = "🌙 Dark Mode";
+  }
+
+  // Toggle theme on button click
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    const isDark = document.body.classList.contains("dark-mode");
+    themeToggle.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });

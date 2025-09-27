@@ -72,28 +72,54 @@
   </style>
 </head>
 <body>
+  <div id="cartSidebar" class="cart-sidebar">
+  <div class="cart-header">
+    <span>Your Cart</span>
+    <span class="cart-close" onclick="toggleCart()">×</span>
+  </div>
+
+  <div id="cartBody">
+    <!-- Cart items will be injected here -->
+  </div>
+
+  <div class="cart-footer">
+    <strong>Total: <span id="cart-total">$0.00</span></strong>
+    <br><br>
+    <button class="checkout-btn">Checkout</button>
+  </div>
+</div>
+
  <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand fw-bold fs-3 text-gradient" href="#">AVE Restaurant</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mainNavbar">
-      <ul class="navbar-nav ms-auto text-center">
-        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#topic">Menu</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-       <li class="nav-item">
-  <a class="nav-link" href="javascript:void(0)" onclick="toggleCart()">
-    <i class="fa-solid fa-cart-shopping" onclick="toggleCart()"></i> Cart 
-    <span id="cart-count" class="badge bg-danger rounded-pill ms-1">0</span>
-  </a>
-</li>
-  </ul>
-  
+  <a class="navbar-brand fw-bold fs-3 text-gradient" href="#">AVE Restaurant</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="mainNavbar">
+    <ul class="navbar-nav ms-auto text-center">
+      <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="#topic">Menu</a></li>
+      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      <li class="nav-item">
+        <button id="themeToggle" class="btn btn-warning">🌙 Dark Mode</button>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="javascript:void(0)" onclick="toggleCart()">
+          <i class="fa-solid fa-cart-shopping"></i> Cart 
+          <span id="cart-count" class="badge bg-danger rounded-pill ms-1">0</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
 </nav>
+
+
+
+
 
 <!-- Hero -->
 <section class="hero">
@@ -249,5 +275,6 @@
   // Toggle cart sidebar
   
 </script>
+
 </body>
 </html>
